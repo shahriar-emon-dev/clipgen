@@ -1,0 +1,28 @@
+{
+  "name": "ai-shorts-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered automatic Shorts generator — analyzes 20-30 minute videos and creates optimized 30-second vertical clips",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "npm run build:shared && npm run build:server && npm run build:client",
+    "build:shared": "cd shared && npm run build",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "start": "cd server && npm run start",
+    "test:server": "cd server && npm run test",
+    "test:client": "cd client && npm run test",
+    "test:integration": "cd server && npm run test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.7.0"
+  }
+}
